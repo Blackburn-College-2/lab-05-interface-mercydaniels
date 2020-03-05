@@ -15,8 +15,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Walking g = new Walking();
-         g.move(486.6);
+        Train g = new Train();
+         g.move(455);
     }
     
 }

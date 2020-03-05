@@ -15,14 +15,13 @@ public class Walking implements CanTravel {
 
     @Override
     public double move(double miles) {
-        double minutes = (miles / mph);
-        int hourCount = 0;
-        for (int i = 0; i <= minutes; i++) {
-            if (minutes > 60) {
-                hourCount++;
-                minutes = minutes - 60;
-            }
-        }
+       
+        double hours = (miles / mph);
+        double minutes = (hours * 60) % 60;
+       
+
+
+        System.out.println(hours + " " + minutes);
         
         System.out.println("Round Trip!");
         System.out.println("Leaving....");
@@ -31,12 +30,12 @@ public class Walking implements CanTravel {
             
         
 
-            System.out.println("Person walking: " + miles + " miles");
-            if (hourCount > 1) {
+            System.out.println("Train traveling: " + miles + " miles");
+            if (hours > 1) {
                 System.out.println("It takes: "
-                        + hourCount + " hours and  " + minutes + " minutes.");
-            } else if (hourCount == 1) {
-                System.out.println("It takes: " + hourCount
+                        + hours + " hours and  " + minutes + " minutes.");
+            } else if (hours == 1) {
+                System.out.println("It takes: " + hours
                         + " hour and " + minutes + " minutes.");
             } else {
                 if (minutes <= 1) {
@@ -50,10 +49,10 @@ public class Walking implements CanTravel {
             }
         }
         
-        System.out.println("Round Trip Time : " + (hourCount * 2) + 
+        System.out.println("Round Trip Time : " + (hours * 2) + 
                 " hours and " + (minutes * 2) + " minutes");
 
-        return minutes;
+    return hours;
     }
 
 }
