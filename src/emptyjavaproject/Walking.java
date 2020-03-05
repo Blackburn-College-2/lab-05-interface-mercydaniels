@@ -12,7 +12,11 @@ package emptyjavaproject;
 public class Walking implements CanTravel {
 
     private final double mph = 5.5;
-
+/**
+ * overrides move to account for walking
+ * @param miles number of miles being traveled
+ * @return hours as double
+ */
     @Override
     public double move(double miles) {
        

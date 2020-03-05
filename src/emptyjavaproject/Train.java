@@ -11,7 +11,11 @@ package emptyjavaproject;
  */
 public class Train implements CanTravel{
     private final double mph = 50.0;
-
+/**
+ * overrides move to account for riding in a train
+ * @param miles number of miles being traveled
+ * @return hours as double
+ */
     @Override
     public double move(double miles) {
          
