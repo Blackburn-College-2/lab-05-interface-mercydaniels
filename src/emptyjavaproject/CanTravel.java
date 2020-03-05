@@ -12,5 +12,5 @@ package emptyjavaproject;
 public interface CanTravel {
     public double move(double miles);
     
-    public double time();
+   
 }

@@ -15,7 +15,7 @@ public class Walking implements CanTravel {
 
     @Override
     public double move(double miles) {
-        double minutes = (miles / mph) / 60;
+        double minutes = (miles / mph);
         int hourCount = 0;
         for (int i = 0; i <= minutes; i++) {
             if (minutes > 60) {
@@ -23,29 +23,37 @@ public class Walking implements CanTravel {
                 minutes = minutes - 60;
             }
         }
+        
         System.out.println("Round Trip!");
         System.out.println("Leaving....");
-        if (hourCount > 1) {
-            System.out.println("It takes: "
-                    + hourCount + " hours and  " + minutes + " minutes.");
-        } else if(hourCount == 1){
-            System.out.println("It takes: " + hourCount 
-                    + " hours and " + minutes + " minutes.");
-        }else{
-            if(minutes >= 1){
-                System.out.println("It takes: " +  minutes + " minute(s).");
-            } else{
-                System.out.println("");
+
+        for (int i = 0; i < 2; i++) {
+            
+        
+
+            System.out.println("Person walking: " + miles + " miles");
+            if (hourCount > 1) {
+                System.out.println("It takes: "
+                        + hourCount + " hours and  " + minutes + " minutes.");
+            } else if (hourCount == 1) {
+                System.out.println("It takes: " + hourCount
+                        + " hour and " + minutes + " minutes.");
+            } else {
+                if (minutes <= 1) {
+                    System.out.println("It takes: " + minutes + " minute(s).");
+                } else {
+                    System.out.println("");
+                }
+            }
+            if (i == 0){
+            System.out.println("Returning...."); 
             }
         }
-        System.out.println("Returning....");
         
+        System.out.println("Round Trip Time : " + (hourCount * 2) + 
+                " hours and " + (minutes * 2) + " minutes");
+
         return minutes;
-    }
-
-    @Override
-    public double time() {
-
     }
 
 }
